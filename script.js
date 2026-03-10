@@ -83,7 +83,7 @@ function disableRequired(event){
     const parentFieldset = event.target.closest(".progressiveQuestionGreyed, .progressiveQuestionHide");
     const targetSibling = parentFieldset.nextElementSibling;
 
-    targetSibling.querySelectorAll("input[type='radio'], input[type='file']").forEach(r => r.required = true)
+    targetSibling.querySelectorAll("input").forEach(r => r.required = true)
 }
 
 everyProgressiveQuestionInactiveButton.forEach(function(oneProgressiveQuestionInactiveButton){
@@ -95,5 +95,5 @@ function resetTargetButtons(event) {
     const targetSibling = parentFieldset.nextElementSibling;
 
     targetSibling.querySelectorAll("input[type='radio']").forEach(r => r.checked = false)
-    targetSibling.querySelectorAll("input[type='radio'], input[type='file']").forEach(r => r.required = false)
+    targetSibling.querySelectorAll("input").forEach(r => r.required = false)
 }

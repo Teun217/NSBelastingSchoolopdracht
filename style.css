@@ -208,6 +208,10 @@ fieldset label{
         color: rgb(200, 200, 200);
         pointer-events: none;
     }
+    input{
+        font: inherit;
+        color: inherit;
+    }
 }
 
 .progressiveQuestionGreyed:has(
