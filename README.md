@@ -117,9 +117,9 @@ Puntjes op de i
 # Eindreflectie
 Ik heb tijdens dit vak veel geleerd over het in elkaar zetten van een formulier. Ik vond het interessant om na de denken over de hierarchie binnen zo'n formulier en de daaruit komende opmaak.
 Ik merk eigenlijk dat ik echt de opmaak en hoe de validatie wordt teruggegeven aan de gebruiker interessant vind en niet zozeer hoe die validatie gedaan wordt.
-Javascript vind ik nog vreselijk lastig en ik merk dan ook dat ik niet volledig begrijp wat er gebeurd nadat ik wat in elkaar heb geknutseld, ik hoop dat deze minor een stuk beter in te worden en ik merk ook de neiging om daar zelf nog even naar te kijken.
+Javascript vind ik nog vreselijk lastig, ik hoop dat deze minor een stuk beter in te worden en ik merk ook de neiging om daar zelf nog even naar te kijken.
 
-Wat ging goed:
+## Wat ging goed:
 Ik vond het leuk om te leren over hoe zo'n huisstijl in elkaar zit en hoe ik die vertaal naar code.
 Ik ben blij met hoe de validatie wordt teruggegeven aan de gebruiker.
 Ik ben blij met de gesprekken met o.a. Rijk die me echt hebben laten nadenken over waarom ik iets doe zoals ik het doe en dat er altijd nog een vraag voor een vraag zit:
@@ -128,9 +128,16 @@ Deze vraag kan opzichzelf bevraagd worden:
 "Waarom ga ik de vragen uberhaupt hiden en showen?"
 Voor mij had dit als resultaat dat ik de vragen heb ge-grey'd in plaats van helemaal weggelaten
 
-Wat ging minder:
+## Wat ging minder:
 Ik merk heel erg dat zodra ik op school ben gewoon aan de code wil en dat daarin het procesverslag bijhouden compleet aan de zijkant gelaten wordt. Hierdoor zitten er gaten in mijn reflectie en daar ben ik niet blij mee.
 
+Ook had ik zoals gezegd erg veel moeie met javascript. Idenk dat ik de basis nog niet helemaal begrijp dus alles wat ik daarboven doe voelt ongefundeerd. Hierdoor vind ik het ook lastig om nadat ik code in elkaar heb geflanst het later te begrijpen en daar op verder te bouwen.
+
+Ook heb moeite gehad met tijd verdelen. Ik heb het idee dat ik soms veel tijd heb gestoken in kleine details tussendoor terwijl ik ooit tijd had kunnen besteden aan het grotere geheel eerst op niveau krijgen.
+Mede hierdoor denk ik dat ik te weinig aandacht heb gestoken in toegankelijkheid.
+
+## Wat heb ik geleerd:
+Ik heb geleerd hoe je verschillende inputstukken in elkaar nest, hoe je met attributes inputs als radiobuttons aan elkaar kan koppelen, na kan denken over wat een webpagina nou een webpagina maakt (wat brengt een webpagina ten opzicht van papier.) 
 
 
 # Bronnen
