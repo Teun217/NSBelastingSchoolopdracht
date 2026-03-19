@@ -137,7 +137,7 @@ Ook heb moeite gehad met tijd verdelen. Ik heb het idee dat ik soms veel tijd he
 Mede hierdoor denk ik dat ik te weinig aandacht heb gestoken in toegankelijkheid.
 
 ## Wat heb ik geleerd:
-Ik heb geleerd hoe je verschillende inputstukken in elkaar nest, hoe je met attributes inputs als radiobuttons aan elkaar kan koppelen, na kan denken over wat een webpagina nou een webpagina maakt (wat brengt een webpagina ten opzicht van papier.) 
+Ik heb geleerd hoe je verschillende inputstukken in elkaar nest, hoe je met attributes inputs als radiobuttons aan elkaar kan koppelen, na kan denken over wat een webpagina nou een webpagina maakt (wat brengt een webpagina ten opzicht van papier).
 
 
 # Bronnen
