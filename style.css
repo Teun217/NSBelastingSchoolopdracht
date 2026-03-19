@@ -14,224 +14,78 @@
 
     --colorAccent: rgb(247, 200, 71);
     --borderColor: rgb(228, 229, 232);
+    --checkMarkColor: 	rgb(91, 220, 123);
 
     --backgroundColorPrimary: rgb(255, 255, 255);
-    --backgroundColorSecondary: rgb(245, 245, 257);
+    --backgroundColorSecondary: rgb(228, 229, 232);
 
-    /* font */
     --fontSizePageTitle: 3em;
     --fontSizePrimary: 2.5em;
     --fontSizeSecondary: 1.5em;
     --fontSizeTertiary: 1.25em;
-
-    /* whitespace */
-    
 }
 
-/* MARK: APPLY VARIABLES GENERAL
-*/
-/* Color */
-
-legend {
-    color: var(--colorEmphasisTextContent);
-}
-
-h1 {
-    color: var(--colorEmphasisTextContent);
-}
-
-header {
-    background-color: var(--backgroundColorPrimary);
-}
+/* ============================
+MARK: Basic page and biggest sections styling
+===============================*/
 
 body {
     background-color: var(--backGroundColorPrimary);
+    margin: 0 0 4em 0;
+    background-color: var(--backgroundColorSecondary);
 }
 
-
-
-/* Font */
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
-h1{
-    font-size: var(--fontSizePageTitle);
+
+
+/* ============================
+MARK: Font styling
+===============================*/
+h1 {
+    color: var(--colorEmphasisTextContent);
+    margin: 0;
 }
+
 legend {
-        font-size: var(--fontSizePrimary);
-    }
+    color: var(--colorEmphasisTextContent);
+    font-size: var(--fontSizePrimary);
+}
+
 fieldset fieldset legend{
         font-size: var(--fontSizeSecondary);
-    }
-
-/* MARK: STYLING GENERAL
-*/
-
-body {
-    margin: 0 0 4em 0;
 }
 
+
+/* ============================
+MARK: page regions styling
+===============================*/
+/* Header */
+header{
+    margin-bottom: 3em;
+    padding: 2em 1em;
+    box-shadow: 0px 0px 25px rgb(0 0 0 / 0.2);
+
+    background-color: var(--backgroundColorPrimary);
+    position: sticky;
+    top: 0;
+    max-width: 100%;
+    z-index: 500;
+}
+
+/* Main */
 main{
     margin: 0 10dvw;
 }
 
 @media (max-width: 600px) {
     main{
-        margin: 0 0;
+        margin: 0 1em;
     }
 }
 
-header{
-    margin-bottom: 3em;
-    padding: 2em 1em;
-    box-shadow: 0px 0px 25px rgb(0 0 0 / 0.2);
-}
-h1 {
-    margin: 0;
-}
-
-
-
-/* STYLING HR
-*/
-hr{
-    margin: 2em 0;
-    width: 100px;
-    height: 5px;
-    background-color: var(--colorAccent);
-    border: none;
-}
-
-/* MARK: STYLING BUTTON
-*/
-
-button{
-    border: 0;
-    font-size: var(--fontSizeTertiary);
-    border-radius: 0.5rem;
-    padding: 1rem;
-    background-color: var(--buttonColor);
-    color: var(--buttonText);
-}
-
-button:hover{
-    background-color: var(--buttonHover);
-}
-
-button:active{
-    background-color: var(--buttonClick);
-}
-
-/* MARK: STYLING FIELDSETS
-*/
-fieldset {
-    border: none;
-    margin: 0;
-    padding: 0;
-    border-radius: 1em;
-}
-
-form > fieldset {
-    margin: 3em 0;
-    padding: 0 1em;
-}
-
-
-/* MARK: STYLING INPUT
-*/
-label input[type="text"], label input[type="date"], label input[type="number"]{
-    display: block;
-    padding: 0.5em;
-    border-radius: 0.5em;
-    border-width: 1.5px;
-    border-color: var(--borderColor);
-    border-style: solid;
-    margin-top: 0.5em;
-    appearance: none;
-}
-
-/* MARK: Validation
-*/
-form > fieldset:has(input:user-invalid){
-    border-color: red;
-    border-style: solid;
-    border-width: 5px;
-}
-
-
-/*MARK: STYLING WARNING
-*/
-.warning {
-    background-color: red;
-    color: white;
-    padding: 0.75em;
-    position: fixed;
-    right: 0;
-    top: 0;
-    border-bottom-left-radius: 1em;
-    width: fit-content;
-    font-size: 0.75em;
-    z-index: 1000;
-}
-
-.warning p {
-    margin: 0;
-}
-
-/*MARK: DISPLAY INPUT IN BLOCK
-*/
-fieldset label{
-    display: block;
-    margin: 1em 0;
-}
-
-
-
-/*MARK: ACTIVE INACTIVE QUESTIONS */
-.targetProgressiveQuestionHide {
-    /* display: none; */
-    display: none;
-}
-
-.progressiveQuestionHide:has(
-  label:nth-of-type(1) input:checked
-) ~ .targetProgressiveQuestionHide {
-    display: inline;
-}
-
-.targetProgressiveQuestionGreyed {
-    /* display: none; */
-    color: rgb(200, 200, 200);
-    pointer-events: none;
-
-    legend {
-        color: rgb(200, 200, 200);
-        pointer-events: none;
-    }
-    input{
-        font: inherit;
-        color: inherit;
-    }
-}
-
-.progressiveQuestionGreyed:has(
-  label:nth-of-type(1) input:checked
-) ~ .targetProgressiveQuestionGreyed {
-    color: var(--colorFlatTextContent);
-    pointer-events: all;
-
-    > fieldset:first-of-type > legend {
-        color: var(--colorEmphasisTextContent);
-    }
-}
-
-
-/* MARK: SCROLL BASED PROGRESS BAR
-*/
-
-main{
-    scroll-timeline: --progressBar;
-}
+/* footer */
 
 footer > div {
     height: 1em;
@@ -252,89 +106,347 @@ footer > div {
     }
 }
 
-/* MARK: name styling
-*/
-
-.name {
-    display: flex;
-}
-
-.name label {
-    margin-right: 1em;
-}
-
-.name label:nth-of-type(-n + 2) input{
-    width: 4em
-}
-
-/* MARK: VERKRIJGER CARD STYLING
-*/
-.verkrijgers {
+/* ============================
+MARK: extra's
+===============================*/
+hr{
+    margin: 2em 0;
+    width: 100px;
+    height: 5px;
     background-color: var(--colorAccent);
-    border-radius: 1em;
-    padding: 2em;
-    margin: 2em 0;
+    border: none;
+}
+
+.warning {
+    background-color: red;
+    color: white;
+    padding: 0.75em;
+    position: fixed;
+    right: 0;
+    top: 0;
+    border-bottom-left-radius: 1em;
+    width: fit-content;
+    font-size: 0.75em;
+    z-index: 1000;
+}
+
+.warning p {
+    margin: 0;
+}
+
+/* ============================
+MARK: main sections
+===============================*/
+/* general */
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* direct child layer */
+form > div {
     position: relative;
+    background-color: var(--backgroundColorPrimary);
+    border-radius: 1em;
+
+    padding: 1em;
+    padding-right: 3em;
+
+    margin: 3em 0;
+
 }
 
-.verkrijgers > legend {
-    float: left;
-    font-weight: bold;
-}
-
-.verkrijgers fieldset {
-    margin: 1em 0;
-}
-
-.verkrijgers > fieldset {
-    margin: 2em 0;
-}
-
-.verkrijgers fieldset:last-child{
-    margin-bottom: 0;
-}
-
-.verkrijgers fieldset fieldset > legend{
+fieldset:has(>label input[type=radio]) legend,
+label:not(:has(input[type="radio"])){
     font-size: 1.25em;
 }
 
-.verkrijgers > button {
+label {
+    color: var(--colorEmphasisTextContent);
+}
+
+
+/* ============================
+MARK: Validation 
+============================ */
+form > div::after{
+    content: "✓";
+
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    display: block;
+    width: 1.5em;
+    aspect-ratio: 1/1;
+    font-size: 1.5em;
+    margin: 0.5em;
+    border-radius: 10em;
+
+    display: grid;
+    place-items: center;
+    
+    background-color: var(--checkMarkColor);
+    color: white;
+
+    scale: 0;
+    transition: 0.25s;
+}
+
+form > :has(>fieldset){
+    outline-width: 0px;
+    outline-color: var(--checkMarkColor);
+}
+
+form > :has(>fieldset:valid){
+    outline-width: 7px;
+    outline-style: solid;
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(.39,2,.46,.68);
+}
+
+form > div:has(>fieldset:valid)::after{
+    scale: 1;
+    transition: 0.5s;
+    transition-timing-function: cubic-bezier(.39,2,.46,.68);
+}
+
+form:invalid{
+    button[type=submit]{
+        background-color: rgb(150, 150, 150);
+    }
+}
+
+/* error messages */
+
+.errorMessage p {
+    margin: 0;
+    margin-top: 4px;
+    color: red;
+    font-size: 0.75em;
+    display: none;
+}
+
+label:has(input:user-invalid:not(:placeholder-shown):not([type="date"])) .errorMessage p:nth-of-type(2){
+    display: block;
+}
+
+label:has(input:user-invalid:placeholder-shown) .errorMessage p:nth-of-type(1),
+label:has(input:user-invalid[type="date"]) .errorMessage p:nth-of-type(1){
+    display: block;
+}
+
+fieldset:has(>label input[type="radio"]){
+    position: relative;
+}
+
+fieldset:has(>label input[type="radio"]:user-invalid)::after{
+    content: "!";
+    font-size: 2em;
+    color: red;
+    font-weight: bolder;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+/* 2nd generation child layer */
+    /* spacing */
+fieldset fieldset:has(input[type="radio"]),
+fieldset label:has(input:not([type="radio"])) {
+    margin-bottom: 2.5em;
+}
+.nameField {
+    margin-bottom: 2em;
+}
+input {
+    margin-top: 0.5em;
+}
+
+fieldset fieldset legend {
+    margin-bottom: 0.5em;
+}
+
+body main .nameField label{
+    margin-bottom: 0.5em;
+}
+
+
+/* ============================
+MARK: labels & inputs
+===============================*/
+
+/* labels */
+fieldset label{
+    display: block;
+    color: var(--colorEmphasisTextContent);
+}
+
+/* interactives */
+
+button{
+    border: 0;
+    font-size: var(--fontSizeTertiary);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: var(--buttonColor);
+    color: var(--buttonText);
+}
+
+button:hover{
+    background-color: var(--buttonHover);
+}
+
+button:active{
+    background-color: var(--buttonClick);
+}
+
+form > button:first-of-type{
+    background-color: white;
+    box-shadow: inset 0 0 0 4px var(--buttonColor);
+    color: var(--buttonColor);
+}
+
+form > button:first-of-type:hover{
+    background-color: var(--buttonHover);
+    color: white;
+    box-shadow: none;
+}
+
+label input[type="text"], label input[type="date"], label input[type="number"]{
+    display: block;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border-width: 1.5px;
+    border-color: var(--borderColor);
+    border-style: solid;
+    height: 1em;
+
+    appearance: none;
+}
+
+input[type=file]{
+    display: block;
+    margin-top: 0.5em;
+}
+
+input[type="file"]::file-selector-button{
+    font-size: 0.75em;
+}
+
+/* name fields styling
+*/
+
+.nameField {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nameField label {
+    margin-right: 1em;
+}
+
+.nameField label:nth-of-type(-n + 2) input{
+    width: 4em
+}
+
+/* ============================
+MARK: functions
+===============================*/
+
+/* progressive question */
+
+.targetProgressiveQuestionHide {
+    display: none;
+}
+
+.progressiveQuestionHide:has(
+  label:nth-of-type(1) input:checked
+) ~ .targetProgressiveQuestionHide {
+    display: inline;
+}
+
+.targetProgressiveQuestionGreyed {
+    color: rgb(200, 200, 200);
+    pointer-events: none;
+
+    legend {
+        color: rgb(200, 200, 200);
+        pointer-events: none;
+    }
+    input{
+        color: rgb(200, 200, 200);
+        color: inherit;
+        opacity: 30%;
+    }
+    label{
+        color: rgb(200, 200, 200);
+    }
+}
+
+.progressiveQuestionGreyed:has(
+  label:nth-of-type(1) input:checked
+) ~ .targetProgressiveQuestionGreyed{
+    color: var(--colorFlatTextContent);
+    pointer-events: all;
+
+    > fieldset:first-of-type > legend {
+        color: var(--colorEmphasisTextContent);
+    }
+    > fieldset > label {
+        color: var(--colorEmphasisTextContent);
+    }
+    > fieldset > div > label {
+        color: var(--colorEmphasisTextContent);
+    }
+    > fieldset input, > label input, > .nameField input {
+         opacity: 100%;
+         color: black;   
+    }
+    > label{
+        color: var(--colorEmphasisTextContent);
+    }
+    .nameField label{
+        color: var(--colorEmphasisTextContent);
+    }
+}
+
+/* verkrijger card */
+
+.verkrijger {
+    position: relative;
+    background-color: var(--colorAccent);
+
+    border-radius: 1em;
+
+    margin: 1em;
+    margin-left: 2em;
+    padding: 1em;
+}
+
+.verkrijger > button {
+    position: absolute;
+    right: 0;
+    top: 0;
+
     width: 2em;
     aspect-ratio: 1/1;
-    position: absolute;
-    right: 1.5em;
-    top: 1.5em;
-    display: flex;
-    justify-content: center;
-    place-items: center;
+
+    margin: 0.75em;
     padding: 0;
+
     background-color: transparent;
-    z-index: 0;
+    &::before,
+    &::after {
+        content: " ";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 4px;
+        background-color: var(--buttonColor);
+    }
 
+    &::before { rotate: -45deg; }
+    &::after  { rotate:  45deg; }
 }
-
-.verkrijgers > button::before{
-    content: " ";
-    background-color: var(--buttonColor);
-    display: block;
-    width: 100%;
-    height: 4px;
-    position: absolute;
-    rotate: -45deg;
-}
-
-.verkrijgers > button::after{
-    content: " ";
-    background-color: var(--buttonColor);
-    display: block;
-    width: 100%;
-    height: 4px;
-    rotate: 45deg;
-    position: absolute;
-}
-
-/* MARK: HIDDEN PERSON STYLING
-*/
-.hiddenPersonCard {
-    /* background-color: red; */
-}   

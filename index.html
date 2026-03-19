@@ -19,197 +19,269 @@
     <main>
 
         <form action="">
-            <fieldset>
-                <legend>Gegevens van de overledene</legend>
-                    <hr>
-                <fieldset class="name">
-                    <legend>Naam</legend>
-                    <label for="Naam">
-                        Voorletter(s)
-                        <input required type="text" name="volledige_naam" id="">
-                    </label>
-    
-                    <label for="Naam">
-                        Tussenvoegsel
-                        <input type="text" name="volledige_naam" id="">
-                    </label>  
-    
-                    <label for="Naam">
-                        Achternaam
-                        <input required type="text" name="volledige_naam" id="">
-                    </label>
-                </fieldset>
-    
-                <label for="">
-                    Bsn overledene
-                    <input required type="text" name="bsn" id=""
-                    minlength="9" maxlength="9"> 
-                    <!-- 9 karakters "name want met number werkt minmaxlength niet" -->
-                </label>
-    
-                <label for="">
-                    Overlijdensdatum
-                    <input required type="date" min="1800-01-01" max="2026-02-26" name="sterfdatum">
-                    <!-- max datum van vandaag -->
-                </label>
-            </fieldset>
-        
-            <fieldset>
-                <legend>Geregistreerde partner</legend>
-                    <hr>
-                <fieldset class="progressiveQuestionGreyed">
-                    <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden</legend>
-                    <label for=""><input required type="radio" name="getrouwd"> Ja</label>
-                    <label for=""><input required type="radio" name="getrouwd"> Nee</label>
-                    <!-- hide/show onderstaande vragen binnen fieldset-->
-                </fieldset>
-                
-                <div class="targetProgressiveQuestionGreyed">
-                    <fieldset class="progressiveQuestionGreyed">
-                        <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?</legend>
-                        <label for=""><input type="radio" name="notariëleActe"> Ja</label>
-                        <label for=""><input type="radio" name="notariëleActe"> Nee</label>
-                        <!-- hide/show onderstaande vragen binnen fieldset en laat opdracht zien-->
-                    </fieldset>
-                    <div class="targetProgressiveQuestionGreyed">
-                        <label for="">
-                            Kopie van akte
-                            <input required type="file">
-                        </label>
-                        <fieldset>
-                            <legend>Hadden de overledene en diens partner een finaal verrekenbeding?</legend>
-                            <label><input type="radio" name="verrekenbeding"> Ja</label>
-                            <label><input type="radio" name="verrekenbeding"> Nee</label>
-                        </fieldset>
-                    </div>
-                </div>
-            </fieldset>
-    
-            <fieldset>
-                <legend>Kinderen</legend>
-                    <hr>
-                <fieldset class="progressiveQuestionGreyed">
-                    <legend>Had de overledene kinderen?</legend>
-                    <label for=""><input required type="radio" name="overledeneKinderen"> Ja</label>
-                    <label for=""><input required type="radio" name="overledeneKinderen"> Nee</label>
-                    <!-- hide/show onderstaande vragen binnen fieldset-->
-                </fieldset>
-                <div class="targetProgressiveQuestionGreyed">
-                    <fieldset class="progressiveQuestionGreyed">
-                        <legend>Is 1 van deze kinderen eerder overleden dan de overleden voor wie u nu aangifte doet?</legend>
-                        <label for=""><input type="radio" name="eerderOverledenKind"> Ja</label>
-                        <label for=""><input type="radio" name="eerderOverledenKind"> Nee</label>
-                        <!-- hide/show onderstaande vragen binnen fieldset-->
-                    </fieldset>
-                    <div class="targetProgressiveQuestionGreyed">
-                        <fieldset>
-                            <legend>Had dit overleden kind zelf kinderen?</legend>
-                            <label for=""><input type="radio" name="overledenKindVanKind"> Ja</label>
-                            <label for=""><input type="radio" name="overledenKindVanKind"> Nee</label>
-                        </fieldset>
-                    </div>
-                </div>
-            </fieldset>
-    
-            <fieldset>
-                <legend>Testament</legend>
-                    <hr>
-                <fieldset class="progressiveQuestionGreyed">
-                    <legend>Had de overledene een testament</legend>
-                    <label for=""><input required type="radio" name="heeftTestament"> Ja</label>
-                    <label for=""><input required type="radio" name="heeftTestament"> Nee</label>
-                </fieldset>
-                <div class="targetProgressiveQuestionGreyed">
-                    <label for="">
-                        Protocolnummer notaris
-                        <input type="number">
-                    </label>
-        
-                    <fieldset>
-                        <legend>Naam notaris</legend>
+            <div>
+                <fieldset>
+                        <legend>Gegevens van de overledene</legend>
+                            <hr>
+                    <div class="nameField">
                         <label for="Naam">
                             Voorletter(s)
-                            <input type="text" name="volledigeNaamNotaris" id="">
+                            <input required type="text" name="volledige_naam" pattern="[A-Za-zÀ-ÿ\s\-]+" id="" placeholder=" ">
+                            <div class="errorMessage">
+                                <p>leeg veld</p>
+                                <p>ongeldig</p>
+                            </div>
                         </label>
         
                         <label for="Naam">
-                            tussenvoegsel
-                            <input type="text" name="volledigeNaamNotaris" id="">
+                            Tussenvoegsel
+                            <input type="text" name="volledige_naam" pattern="[A-Za-zÀ-ÿ\s\-]+" id="" placeholder=" ">
+                            <div class="errorMessage">
+                                <p></p>
+                                <p>ongeldig</p>
+                            </div>
                         </label>  
         
                         <label for="Naam">
                             Achternaam
-                            <input  type="text" name="volledigeNaamNotaris" id="">
+                            <input required type="text" name="volledige_naam" pattern="[A-Za-zÀ-ÿ\s\-]+" id="" placeholder=" ">
+                            <div class="errorMessage">
+                                <p>leeg veld</p>
+                                <p>ongeldig</p>
+                            </div>
                         </label>
-                    </fieldset>
-        
+                    </div>
+                    
                     <label for="">
-                        Verstigingsplaats
-                        <input type="text">
+                        BSN overledene
+                        <input required type="text" name="bsn" id="" minlength="8" maxlength="9" pattern="[0-9]{8,9}" placeholder=" "> 
+                        <!-- 9 karakters "name want met number werkt minmaxlength niet" -->
+                        <div class="errorMessage">
+                            <p>leeg veld</p>
+                            <p>Vul een geldige BSN in</p>
+                        </div>
                     </label>
-        
+                    
                     <label for="">
-                        Datum van het testament of van de laatste wijzigen
-                        <input type="date" min="1800-01-01" max="2026-02-26" name="laatstWijzigingTestament">
+                        Overlijdensdatum
+                        <input required type="date" name="sterfdatum" min="1800-01-01" max="2026-02-26">
+                        <!-- max datum van vandaag -->
+                        <div class="errorMessage">
+                            <p>Niet ingevuld</p>
+                        </div>
                     </label>
-                </div>
-    
-            </fieldset>
-
-            <fieldset>
-                <legend>Voor wie doet u aangifte</legend>
-                <hr>
-
-                <fieldset class="progressiveQuestionHide">
-                    <legend>Zijn er verkrijgers voor wie u <em>geen</em> aangifte doet?</legend>
-                    <label for=""><input required type="radio" name="aangifteVoorVerkijgers"> Ja</label>
-                    <label for=""><input required type="radio" name="aangifteVoorVerkijgers"> Nee</label>
                 </fieldset>
+            </div>
+                
 
-                <div class="targetProgressiveQuestionHide">
-                    <fieldset class="verkrijgers">
-                        <legend>Verkrijger</legend>
-                        <button type="button" class="removePerson"></button>
-                        <fieldset>
-                            <legend>Persoongegevens</legend>
-                                <div class="name">
-                                    <label for="Naam">
-                                        Voorletter(s)
-                                        <input type="text" name="volledige_naam" id="">
-                                    </label>
-                                    
-                                    <label for="Naam">
-                                        Tussenvoegsel
-                                        <input type="text" name="volledige_naam" id="">
-                                    </label>  
-                                    
-                                    <label for="Naam">
-                                        Achternaam
-                                        <input type="text" name="volledige_naam" id="">
-                                    </label>
-                                </div>
-                                <label for="">
-                                    Bsn/RSIN 
-                                    <input type="text" name="" id="">
-                                    </label>
-                        </fieldset>
-                                
-                        <fieldset>
-                            <legend>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen? </legend>
-                            <label for=""><input required type="radio" name="geheleVermogen"> Ja</label>
-                            <label for=""><input required type="radio" name="geheleVermogen"> Nee</label>
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
-                            <label for=""><input required type="radio" name="beroepOpLegitiemePortie"> Ja</label>
-                            <label for=""><input required type="radio" name="beroepOpLegitiemePortie"> Nee</label>
-                        </fieldset>
-        
+            <div>
+                <fieldset>
+                    <legend>Geregistreerde partner</legend>
+                        <hr>
+                    <fieldset class="progressiveQuestionGreyed">
+                        <legend>Was de overledene getrouwd of had de overledene een geregistreerde partner op het moment van overlijden</legend>
+                        <label for=""><input required type="radio" name="getrouwd"> Ja</label>
+                        <label for=""><input required type="radio" name="getrouwd"> Nee</label>
+                        <!-- hide/show onderstaande vragen binnen fieldset-->
                     </fieldset>
-                    <button type="button" class="addPerson">Voeg verkrijger toe</button>
-                </div>        
-            </fieldset>
+                    
+                    <div class="targetProgressiveQuestionGreyed">
+                        <fieldset class="progressiveQuestionGreyed">
+                            <legend>Hadden de overledene en diens echtgenoot of geregistreerde partner huwelijkse of partnerschapsvoorwaarden laten vastleggen in een notariële akte?</legend>
+                            <label for=""><input type="radio" name="notariëleActe"> Ja</label>
+                            <label for=""><input type="radio" name="notariëleActe"> Nee</label>
+                            <!-- hide/show onderstaande vragen binnen fieldset en laat opdracht zien-->
+                        </fieldset>
+                        <div class="targetProgressiveQuestionGreyed">
+                            <label for="">
+                                Kopie van akte:
+                                <input required type="file">
+                            </label>
+                            <fieldset>
+                                <legend>Hadden de overledene en diens partner een finaal verrekenbeding?</legend>
+                                <label><input type="radio" name="verrekenbeding"> Ja</label>
+                                <label><input type="radio" name="verrekenbeding"> Nee</label>
+                            </fieldset>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+    
+            <div>
+                <fieldset>
+                    <legend>Kinderen</legend>
+                        <hr>
+                    <fieldset class="progressiveQuestionGreyed">
+                        <legend>Had de overledene kinderen?</legend>
+                        <label for=""><input required type="radio" name="overledeneKinderen"> Ja</label>
+                        <label for=""><input required type="radio" name="overledeneKinderen"> Nee</label>
+                        <!-- hide/show onderstaande vragen binnen fieldset-->
+                    </fieldset>
+                    <div class="targetProgressiveQuestionGreyed">
+                        <fieldset class="progressiveQuestionGreyed">
+                            <legend>Is 1 van deze kinderen eerder overleden dan de overleden voor wie u nu aangifte doet?</legend>
+                            <label for=""><input type="radio" name="eerderOverledenKind"> Ja</label>
+                            <label for=""><input type="radio" name="eerderOverledenKind"> Nee</label>
+                            <!-- hide/show onderstaande vragen binnen fieldset-->
+                        </fieldset>
+                        <div class="targetProgressiveQuestionGreyed">
+                            <fieldset>
+                                <legend>Had dit overleden kind zelf kinderen?</legend>
+                                <label for=""><input type="radio" name="overledenKindVanKind"> Ja</label>
+                                <label for=""><input type="radio" name="overledenKindVanKind"> Nee</label>
+                            </fieldset>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div>
+                <fieldset>
+                    <legend>Testament</legend>
+                        <hr>
+                    <fieldset class="progressiveQuestionGreyed">
+                        <legend>Had de overledene een testament</legend>
+                        <label for=""><input required type="radio" name="heeftTestament"> Ja</label>
+                        <label for=""><input required type="radio" name="heeftTestament"> Nee</label>
+                    </fieldset>
+                    <div class="targetProgressiveQuestionGreyed">
+                        <div class="nameField">
+                            <label for="Naam">
+                                Voorletter(s)
+                                <input type="text" name="volledigeNaamNotaris" pattern="[A-Za-zÀ-ÿ\s\-]+" id="" placeholder=" ">
+                                <div class="errorMessage">
+                                <p>leeg veld</p>
+                                <p>ongeldig</p>
+                            </div>
+                            </label>
+            
+                            <label for="Naam">
+                                tussenvoegsel
+                                <input type="text" name="volledigeNaamNotaris" pattern="[A-Za-zÀ-ÿ\s\-]+" id="" placeholder=" ">
+                                <div class="errorMessage">
+                                <p>leeg veld</p>
+                                <p>ongeldig</p>
+                            </div>
+                            </label>  
+            
+                            <label for="Naam">
+                                Achternaam
+                                <input  type="text" name="volledigeNaamNotaris" pattern="[A-Za-zÀ-ÿ\s\-]+" id="" placeholder=" ">
+                                <div class="errorMessage">
+                                <p>leeg veld</p>
+                                <p>ongeldig</p>
+                            </div>
+                            </label>
+                        </div>
+
+                        <label for="">
+                            Protocolnummer notaris
+                            <input type="text" name="bsn" id="" minlength="9" maxlength="9" placeholder=" "> 
+                            <div class="errorMessage">
+                                <p>leeg veld</p>
+                                <p>ongeldig</p>
+                            </div>
+                        </label>
+            
+            
+                        <label for="">
+                            Verstigingsplaats
+                            <input type="text" placeholder=" ">
+                            <div class="errorMessage">
+                                <p>leeg veld</p>
+                                <p>ongeldig</p>
+                            </div>
+                        </label>
+            
+                        <label for="">
+                            Datum van het testament of van de laatste wijzigen
+                            <input type="date" min="1800-01-01" max="2026-02-26" name="laatstWijzigingTestament">
+                            <div class="errorMessage">
+                                <p>Niet ingevuld</p>
+                                <p></p>
+                            </div>
+                        </label>
+                    </div>
+                </fieldset>
+            </div>
+
+            <div>
+                <fieldset>
+                    <legend>Voor wie doet u aangifte</legend>
+                    <hr>
+    
+                    <fieldset class="progressiveQuestionHide">
+                        <legend>Zijn er verkrijgers voor wie u <em>geen</em> aangifte doet?</legend>
+                        <label for=""><input required type="radio" name="aangifteVoorVerkijgers"> Ja</label>
+                        <label for=""><input required type="radio" name="aangifteVoorVerkijgers"> Nee</label>
+                    </fieldset>
+    
+                    <div class="targetProgressiveQuestionHide">
+                        <div class="verkrijger">
+                            <button type="button" class="removePerson"></button>
+                            <fieldset>
+                                <legend>Verkrijger</legend>
+                                <fieldset>
+                                    <legend>Persoongegevens</legend>
+                                        <div class="nameField">
+                                            <label for="Naam">
+                                                Voorletter(s)
+                                                <input type="text" name="volledige_naam" pattern="[A-Za-zÀ-ÿ\s\-]+" id="">
+                                                <div class="errorMessage">
+                                                    <p>ongeldig</p>
+                                                    <p>leeg veld</p>
+                                                </div>
+                                            </label>
+                                            
+                                            <label for="Naam">
+                                                Tussenvoegsel
+                                                <input type="text" name="volledige_naam" pattern="[A-Za-zÀ-ÿ\s\-]+" id="">
+                                                <div class="errorMessage">
+                                                    <p>ongeldig</p>
+                                                    <p>leeg veld</p>
+                                                </div>
+                                            </label>  
+                                            
+                                            <label for="Naam">
+                                                Achternaam
+                                                <input type="text" name="volledige_naam" pattern="[A-Za-zÀ-ÿ\s\-]+" id="">
+                                                <div class="errorMessage">
+                                                    <p>ongeldig</p>
+                                                    <p>leeg veld</p>
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <label for="">
+                                            Bsn/RSIN 
+                                            <input type="text" name="" minlength="9" maxlength="9" id="">
+                                            <div class="errorMessage">
+                                                <p>Vul een geldige BSN in</p>
+                                                <p>leeg veld</p>
+                                            </div>
+                                        </label>
+                                </fieldset>
+                                
+                                <fieldset>
+                                    <legend>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen? </legend>
+                                    <label for=""><input required type="radio" name="geheleVermogen"> Ja</label>
+                                    <label for=""><input required type="radio" name="geheleVermogen"> Nee</label>
+                                </fieldset>
+                                
+                                <fieldset>
+                                    <legend>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
+                                    <label for=""><input required type="radio" name="beroepOpLegitiemePortie"> Ja</label>
+                                    <label for=""><input required type="radio" name="beroepOpLegitiemePortie"> Nee</label>
+                                </fieldset>
+                            </fieldset>
+                        </div>
+                                
+                        <button type="button" class="addPerson">Voeg verkrijger toe</button>
+                    </div>        
+                </fieldset>
+            </div>
+
+            <button type="button">Opslaan</button>
+
             <button type="submit">Verzenden ></button>
         </form>
     </main>
@@ -219,3 +291,13 @@
     </footer>
 </body>
 </html>
+
+
+<!--
+readme uitbereiden
+Validation feedback
+Spacing
+    hierarchie van greyed out tekst
+tussentijds opslaan
+disabled state input ook greyed out. javascript disabled attribute
+-->

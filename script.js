@@ -8,70 +8,87 @@ const everyRemovePersonButton = document.querySelectorAll(".removePerson");
 const everyRequiredQuestion = document.querySelectorAll("[required]")
 const everyProgressiveQuestionActiveButton = document.querySelectorAll(".progressiveQuestionGreyed label:first-of-type [type='radio'], .progressiveQuestionHide label:first-of-type [type='radio']")
 const everyProgressiveQuestionInactiveButton = document.querySelectorAll(".progressiveQuestionGreyed label:nth-of-type(2) [type='radio'], .progressiveQuestionHide label:nth-of-type(2) [type='radio']")
-console.log(everyProgressiveQuestionActiveButton)
-console.log(everyProgressiveQuestionInactiveButton)
+
 
 // MARK: ADD AND REMOVE PERSON
 
 addPersonButton.addEventListener("click", injectHTMLOnClick);
 
-everyRemovePersonButton.forEach(function (removePersonButton) {
-    removePersonButton.addEventListener("click", removePersonFunction);
-});
-
 function injectHTMLOnClick() {
     addPersonButton.insertAdjacentHTML(
         "beforebegin",
         `
-        <fieldset class="verkrijgers">
-            <legend>Verkrijger</legend>
+        <div class="verkrijger">
             <button type="button" class="removePerson"></button>
             <fieldset>
-                <legend>Persoongegevens</legend>
-                <div class="name">
-                    <label>
-                        Voorletter(s)
-                        <input type="text" name="voorletters">
-                    </label>
-                    <label>
-                        Tussenvoegsel
-                        <input type="text" name="tussenvoegsel">
-                    </label>
-                    <label>
-                        Achternaam
-                        <input type="text" name="achternaam">
-                    </label>
-                </div>
-                <label>
-                    Bsn/RSIN
-                    <input type="text" name="bsn_rsin">
-                </label>
+                <legend>Verkrijger</legend>
+                <fieldset>
+                    <legend>Persoongegevens</legend>
+                        <div class="nameField">
+                            <label for="Naam">
+                                Voorletter(s)
+                                <input type="text" name="volledige_naam" pattern="[A-Za-zÀ-ÿ\s\-]+" id="">
+                                <div class="errorMessage">
+                                    <p>ongeldig</p>
+                                    <p>leeg veld</p>
+                                </div>
+                            </label>
+                            
+                            <label for="Naam">
+                                Tussenvoegsel
+                                <input type="text" name="volledige_naam" pattern="[A-Za-zÀ-ÿ\s\-]+" id="">
+                                <div class="errorMessage">
+                                    <p>ongeldig</p>
+                                    <p>leeg veld</p>
+                                </div>
+                            </label>  
+                            
+                            <label for="Naam">
+                                Achternaam
+                                <input type="text" name="volledige_naam" pattern="[A-Za-zÀ-ÿ\s\-]+" id="">
+                                <div class="errorMessage">
+                                    <p>ongeldig</p>
+                                    <p>leeg veld</p>
+                                </div>
+                            </label>
+                        </div>
+                        <label for="">
+                            Bsn/RSIN 
+                            <input type="text" name="" minlength="9" maxlength="9" id="">
+                            <div class="errorMessage">
+                                <p>Vul een geldige BSN in</p>
+                                <p>leeg veld</p>
+                            </div>
+                        </label>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen? </legend>
+                    <label for=""><input required type="radio" name="geheleVermogen"> Ja</label>
+                    <label for=""><input required type="radio" name="geheleVermogen"> Nee</label>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
+                    <label for=""><input required type="radio" name="beroepOpLegitiemePortie"> Ja</label>
+                    <label for=""><input required type="radio" name="beroepOpLegitiemePortie"> Nee</label>
+                </fieldset>
             </fieldset>
+        </div>
+        `)
+        const allVerkrijgers = document.querySelectorAll(".verkrijger");
+        const newestVerkrijger = allVerkrijgers[allVerkrijgers.length - 1];
+        newestVerkrijger
+            .addEventListener("click", removePersonFunction);
+        ;
+    }
 
-            <fieldset>
-                <legend>Krijgt deze verkrijger waarvoor u geen aangifte doet het hele vermogen?</legend>
-                <label><input type="radio" name="geheleVermogen_${Date.now()}"> Ja</label>
-                <label><input type="radio" name="geheleVermogen_${Date.now() + 1}"> Nee</label>
-            </fieldset>
-
-            <fieldset>
-                <legend>Doet deze verkrijger een beroep op diens legitieme portie (wettelijke erfdeel)?</legend>
-                <label><input type="radio" name="legitiemePortie_${Date.now()}"> Ja</label>
-                <label><input type="radio" name="legitiemePortie_${Date.now() + 1}"> Nee</label>
-            </fieldset>
-        </fieldset>
-        `
-    );
-
-    const allVerkrijgers = document.querySelectorAll(".verkrijgers");
-    const newestVerkrijger = allVerkrijgers[allVerkrijgers.length - 1];
-    newestVerkrijger
-        .querySelector(".removePerson")
-        .addEventListener("click", removePersonFunction);
-}
+everyRemovePersonButton.forEach(function (removePersonButton) {
+    removePersonButton.addEventListener("click", removePersonFunction);
+});
 
 function removePersonFunction() {
-    this.closest(".verkrijgers").remove();
+    this.closest(".verkrijger").remove();
 }
 
 // MARK: DISABLE POINTER EVENTS NONE QUESTIONS AND RESET RADIOBUTTONS
